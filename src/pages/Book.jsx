@@ -9,7 +9,7 @@ export default function Book() {
                 <Button  text="Book Now" />  
             </div>
             <p className="flex items-center justify-center"><img src="/images/phone.svg" width={20} height={20} alt="phone" /> +234 78 888 88373</p>  
-            <p className="text-gray-600 mt-2">We are available 24/7, you can also check us on social media</p>
+            <p className="text-gray-600 mt-2 text-center">We are available 24/7, you can also check us on social media</p>
             <div className="flex gap-4 mt-2">
                 <img className="w-10 h-10" src="/images/facebook.svg" alt="facebook" />
                 <img className="w-10 h-10" src="/images/instagram.svg" alt="instagram" />

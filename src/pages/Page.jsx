@@ -4,9 +4,15 @@ import Book from './Book'
 
 
 export default function Page() {
+    const scrollToBottom = () => {
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth'
+        });
+    };
     return (
         <div>
-            <Home />
+            <Home scrollToBottom={scrollToBottom}/>
             <AboutUs />
             <Book />
         </div>
