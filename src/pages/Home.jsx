@@ -1,7 +1,18 @@
 import Button from '../components/Button';
 import { Link } from 'react-router';
+import { useState, useEffect} from 'react';
 
 export default function Home({ scrollToBottom }) {
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [width, setWidth] = useState(window.innerWidth)
+    const toggleMenu = () => setMenuOpen(!menuOpen);
+    useEffect(() => {
+        const handleResize = () => {
+            setWidth(window.innerWidth);
+        }
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [])
     return (
         <div>
             <section
@@ -18,34 +29,51 @@ export default function Home({ scrollToBottom }) {
 
                 <nav className="w-full py-2 bg-transparent flex justify-between items-center border-b-2 border-gray-400 relative px-4 md:px-8">
                     <p className="text-xl md:text-2xl font-bold text-white">Philopethotels</p>
-                </nav>
-
-                <div className="w-full flex flex-col md:flex-row justify-between items-center my-4 relative px-4 md:px-8">
-                    <p className="text-lg md:text-2xl text-center md:text-left font-semibold text-white">
-                        Let's Make Your Stay Unforgettable
-                    </p>
-                    <nav className="flex flex-col md:flex-row items-center justify-center md:justify-between w-full md:w-1/3 mt-4 md:mt-0">
-                        <Link to="/rooms" className='mt-4'>
-                            <Button text="Rooms" />
-                        </Link>
-                        <Link to="/menu" className='mt-4'>
-                            <Button text="Menu" />
-                        </Link>
-                        <div onClick={scrollToBottom} className='mt-4'>
-                            <Button text="Book" />
+                    {width < 768 ? (
+                        <div className="relative">
+                            <button
+                                style={{ cursor: 'pointer' }}
+                                onClick={toggleMenu}
+                                className="text-2xl text-white focus:outline-none py-1 px-2 border-2 border-gray-500 hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
+                            >
+                                ☰
+                            </button>
+                            {menuOpen && (
+                                <nav className="absolute flex flex-col justify-center w-full top-16 right-20 z-10 transition-all duration-300 ease-in-out">
+                                    <Link to="/rooms" className="text-white py-2 md:py-0">
+                                        <Button text="Rooms" />
+                                    </Link>
+                                    <Link to="/menu" className="text-white py-2 md:py-0">
+                                        <Button text="Menu" />
+                                    </Link>
+                                    <div onClick={scrollToBottom} className="text-white py-2 md:py-0">
+                                        <Button text="Book" />
+                                    </div>
+                                </nav>
+                            )}
                         </div>
-                    </nav>
-                </div>
-
-                {/* Footer Section */}
-                <div className="absolute bottom-6 left-0 flex flex-col md:flex-row items-center justify-between w-full px-4 md:px-8 my-1">
-                    <p className="text-sm md:text-base text-center md:text-left text-white">
-                        Not just a hotel, <br /> but a place that feels like home
+                    ) : (
+                        <nav className="flex items-center justify-between w-1/3">
+                            <Link to="/rooms" className="text-white py-2 md:py-0">
+                                <Button text="Rooms" />
+                            </Link>
+                            <Link to="/menu" className="text-white py-2 md:py-0">
+                                <Button text="Menu" />
+                            </Link>
+                            <div onClick={scrollToBottom} className="text-white py-2 md:py-0">
+                                <Button text="Book" />
+                            </div>
+                        </nav>
+                    )}
+                </nav>
+                
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center max-w-md">
+                    <img src="/images/star.png" alt="Star Icon" className="h-7 w-20" />
+                    <p className="text-5xl text-center text-white">
+                        ENJOY A LUXURY EXPERIENCE
                     </p>
                     <Link to="/rooms">
-                        <button className="mt-4 md:mt-0 transparent border-2 border-gray-500 hover:bg-white hover:text-black text-gray-500 font-medium py-2 px-6 rounded-full transition-all duration-300 ease-in-out transform hover:translate-x-1">
-                            Check Rooms
-                        </button>
+                        <Button text="Check Rooms" />
                     </Link>
                 </div>
             </section>
