@@ -28,7 +28,10 @@ export default function Home({ scrollToBottom }) {
                 <div className="absolute inset-0 bg-black opacity-70"></div>
 
                 <nav className="w-full py-2 bg-transparent flex justify-between items-center border-b-2 border-gray-400 relative px-4 md:px-8">
-                    <p className="text-xl md:text-2xl font-bold text-white">Philopethotels</p>
+                    <div className='flex justify-start items-center gap-1'>
+                        <img src="/logo.png" alt=""  width={40} height={40}/>
+                        <p className="text-xl md:text-2xl font-bold text-white">Philopethotels</p>
+                    </div>
                     {width < 768 ? (
                         <div className="relative">
                             <button

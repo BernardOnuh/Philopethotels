@@ -8,8 +8,9 @@ export default function Book() {
             <div className="my-6">
                 <Button  text="Book Now" />  
             </div>
-            <p className="flex items-center justify-center"><img src="/images/phone.svg" width={20} height={20} alt="phone" /> +234 78 888 88373</p>  
-            <p className="text-gray-600 mt-2 text-center">We are available 24/7, you can also check us on social media</p>
+            <p className="flex items-center justify-center"><img src="/images/phone.svg" width={20} height={20} alt="phone" /> +234 91 688 90 000 or +234 80 519 16 14</p>  
+            <p className="text-gray-600 mt-2 text-center">Our location is at Aposogbe Iviocha Quater, Furgar, Edo state</p>
+            <p className="text-gray-600 mt-2 text-center">You can aslo send us an email to <a href="mailto:infophilopethotels@gmail.com" className="text-blue-500">infophilopethotels@gmail.com</a></p>
             <div className="flex gap-4 mt-2">
                 <img className="w-10 h-10" src="/images/facebook.svg" alt="facebook" />
                 <img className="w-10 h-10" src="/images/instagram.svg" alt="instagram" />
