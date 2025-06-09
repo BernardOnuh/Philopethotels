@@ -138,8 +138,8 @@ export default function Page() {
                                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                                     <div>
                                         <p className="font-medium text-blue-800">📞 Phone Numbers:</p>
-                                        <p className="text-blue-700">+234 91 688 90 000</p>
-                                        <p className="text-blue-700">+234 80 519 16 14</p>
+                                        <p className="text-blue-700">+234 7037161332</p>
+                                     
                                     </div>
                                     <div>
                                         <p className="font-medium text-blue-800">✉️ Official Email:</p>

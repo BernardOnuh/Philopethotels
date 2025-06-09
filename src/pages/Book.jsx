@@ -11,9 +11,8 @@ export default function Book() {
             icon: "📞",
             title: "Call Us",
             subtitle: "Speak directly with our team",
-            primary: "+234 91 688 90 000",
-            secondary: "+234 80 519 16 14",
-            action: "tel:+2349168890000",
+            secondary: "+2347037161332",
+            action: "tel:+2347037161332",
             gradient: "from-green-500 to-emerald-600"
         },
         {
